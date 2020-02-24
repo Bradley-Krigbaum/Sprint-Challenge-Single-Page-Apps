@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer:  Clien side routing allows you to actively render content without disrupting the end users by not refreshing the entire page, only the portion that you want to rerender.
 
 ## Project Set Up
 
