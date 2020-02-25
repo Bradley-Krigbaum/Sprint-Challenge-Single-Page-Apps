@@ -31,3 +31,8 @@ img {
 .row {
   justify-content: center;
 }
+
+.container .row .characterList {
+  margin: 3%;
+  width: 100%;
+}

@@ -7,7 +7,7 @@ export default function CharacterCard({character}) {
   return (
     <form>
       <div className="characterList">
-        <Col xs="2" md="4" xl="auto">
+        <Col xs="auto" md="auto" xl="auto">
           <Card>
             <CardHeader>
               <label>
