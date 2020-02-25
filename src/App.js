@@ -26,17 +26,8 @@ export default function App() {
         render={routeProps => {
 
           return (
-            <CharacterList {...routeProps} character="character" />
+            <CharacterList {...routeProps} person="person" />
           )
-        }}
-      />
-
-      <Route
-        path="/character/:id"
-        render={routeProps => {
-          return (
-            <CharacterList />
-          );
         }}
       />
 

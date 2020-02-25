@@ -1,45 +1,57 @@
 import React, { useState, useEffect } from "react";
+import { Container, Row } from "reactstrap";
+import CharacterCard from './CharacterCard'
+import './Character.css';
 
 export default function SearchForm({ person }) {
+
+  // const [newCharacter, setNewCharacter] = useState([])
+
+  // useEffect(() => {
+  //   const character = (obi) => {
+  //     const newPerson = [];
+
+  //     obi.forEach( element => {
+  //       // console.log("ELE: ",element);
+  //       newPerson.push({
+  //         id: element.id,
+  //         name: element.name,
+  //         image: element.image,
+  //         status: element.status
+  //       })
+  //     })
+  //     return newPerson;
+  //   }
+  //   setNewCharacter(character(person));
+  // }, [person]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState(person);
 
-  // console.log("person: ", person)
-  // console.log("term: ", searchTerm)
-  // console.log("results: ", searchResults)
-
-  const charactersList = person.forEach((element) => {
-    console.log(element.name);
-    return {
-      ...element,
-      name: element.name
-    };
-  })
-  console.log("char: ", [charactersList])
-
-
-
-  
   useEffect(() => {
+    // const results = person.filter(characters => {
+    //   return characters.toLowerCase().includes(searchTerm.toLowerCase());
+    // });
+
     const results = person.filter(characters => {
-      return characters.toLowerCase().includes(searchTerm.toLowerCase());
+      return characters.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
     setSearchResults(results);
-  }, [searchTerm, person])
+  }, [searchTerm, person]);
 
   const handleChange = event => {
     setSearchTerm(event.target.value)
   };
 
+  
   return (
     <section className="search-form">
       <div>
         <form>
           <label htmlFor="name">Search:</label>
           <input
-            id="name"
+            id="id"
             type="text"
             name="name"
             placeholder="Search"
@@ -47,13 +59,13 @@ export default function SearchForm({ person }) {
             onChange={handleChange}
           />
         </form>
-        <div>
-          <ul>
-            {searchResults.map(characterName => {
-              return <li key={characterName}>{characterName}</li>;
+        <Container>
+          <Row>
+            {searchResults.map(character => {
+              return <CharacterCard character={character} key={character.id}/>;
             })}
-          </ul>
-        </div>
+          </Row>
+        </Container>
       </div>
     </section>
     );

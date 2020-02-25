@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Container, Row } from "reactstrap";
-import CharacterCard from './CharacterCard'
-import './Character.css';
 import SearchForm from "./SearchForm";
+import CharacterCard from "./CharacterCard";
 
 
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
 
-  const [person, setPerson] = useState([])  
+  const [person, setPerson] = useState([])
+  // const [characterName, setCharacterName] = useState([])
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -19,23 +18,19 @@ export default function CharacterList() {
       .get('https://rickandmortyapi.com/api/character/')
       .then(response => { 
         setPerson(response.data.results)
+        // console.log('res > ', response.data.results);
       })
       .catch(error => { console.log(error) })
-  }, []);
+  }, [person]);
 
 
   return (
 
     <section className="character-list">
-      <SearchForm person={person} />
       <h2>Character List</h2>
-      <Container>
-        <Row>
-          {person.map(character => {
-            return <CharacterCard character={character} key={character.id}/>;
-          })}
-        </Row>
-      </Container>
+      <div>
+        <SearchForm person={person} key={person.id} component={CharacterCard}/>
+      </div>
     </section>
   );
 }
