@@ -12,12 +12,14 @@ img {
   margin: 0 auto;
   width: 70%;
   padding: 3%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .characterList img {
   width: 100%;
   padding: 0;
   padding-bottom: 1.5%;
+  box-shadow: none;
 }
 
 .character-list {
@@ -35,4 +37,8 @@ img {
 .container .row .characterList {
   margin: 3%;
   width: 100%;
+}
+
+.container .row .characterList .card {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
