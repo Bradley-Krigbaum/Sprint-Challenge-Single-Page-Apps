@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import SearchForm from "./SearchForm";
-import CharacterCard from "./CharacterCard";
-
 
 
 export default function CharacterList() {
@@ -29,7 +27,7 @@ export default function CharacterList() {
     <section className="character-list">
       <h2>Character List</h2>
       <div>
-        <SearchForm person={person} key={person.id} component={CharacterCard}/>
+        <SearchForm person={person} key={person.id} />
       </div>
     </section>
   );

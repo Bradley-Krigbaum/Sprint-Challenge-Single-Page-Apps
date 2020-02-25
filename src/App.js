@@ -3,6 +3,9 @@ import { Route, Link } from "react-router-dom";
 import Header from "./components/Header.js";
 import WelcomePage from './components/WelcomePage';
 import CharacterList from './components/CharacterList';
+import { Button } from 'reactstrap';
+import './style.css';
+
 
 export default function App() {
 
@@ -10,8 +13,12 @@ export default function App() {
     <main>
       <Header />
       <div>
-        <Link to='/'>Home</Link>
-        <Link to='/character'>Characters</Link>
+        <Link to='/'>
+          <Button color="primary">Home</Button>
+        </Link>
+        <Link to='/character'>
+          <Button color="primary">Characters</Button>
+        </Link>
       </div>
 
       <Route 
