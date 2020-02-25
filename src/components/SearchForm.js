@@ -34,6 +34,7 @@ export default function SearchForm({ person }) {
     // });
 
     const results = person.filter(characters => {
+      // console.log('FILTER', characters.location.name)
       return characters.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
@@ -44,7 +45,7 @@ export default function SearchForm({ person }) {
     setSearchTerm(event.target.value)
   };
 
-  
+
   return (
     <section className="search-form">
       <div>

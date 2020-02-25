@@ -15,8 +15,18 @@ export default function CharacterCard({character}) {
               </label>
             </CardHeader>
             <CardBody>
+
               <img src={character.image} alt={character.name}/>
+
+              <label>
+                Status: 
+              </label>
               <CardText>{character.status}</CardText>
+
+              <label>
+                Location: 
+              </label>
+              <CardText>{character.location.name}</CardText>
             </CardBody>
           </Card>
         </Col>

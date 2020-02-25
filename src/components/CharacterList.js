@@ -21,7 +21,7 @@ export default function CharacterList() {
         // console.log('res > ', response.data.results);
       })
       .catch(error => { console.log(error) })
-  }, [person]);
+  }, []);
 
 
   return (
